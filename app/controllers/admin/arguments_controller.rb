@@ -14,15 +14,21 @@ module Admin
     end
 
     def hide
-      Argument.find_by!(slug: params[:id]).hide!
+      argument.hide!
       redirect_to :back
     end
 
     def unhide
-      Argument.find_by!(slug: params[:id]).unhide!
+      argument.unhide!
       redirect_to :back
     end
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+    private
+      def argument
+        Argument.find_by!(slug: params[:id]) ||
+        Argument.find_by!(id: params[:id])
+      end
   end
 end

@@ -15,7 +15,7 @@ class ArgumentDashboard < Administrate::BaseDashboard
     cons: Field::HasMany.with_options(class_name: "BitcoinAddress"),
     id: Field::Number,
     statement: Field::Text,
-    aasm_state: Field::Text,
+    aasm_state: Field::String,
     validity: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -39,6 +39,7 @@ class ArgumentDashboard < Administrate::BaseDashboard
     :all_sum,
     :pros,
     :cons,
+    :created_at,
     :aasm_state
   ].freeze
 
