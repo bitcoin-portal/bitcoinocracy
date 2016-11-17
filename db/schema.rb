@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20161117080351) do
     t.integer  "cons_sum",   limit: 8, default: 0
     t.integer  "all_sum",    limit: 8, default: 0
     t.integer  "min_sum",    limit: 8, default: 0
-    t.string   "aasm_state"
+    t.string   "aasm_state",           default: "visible"
   end
 
   add_index "arguments", ["slug"], name: "index_arguments_on_slug", unique: true
