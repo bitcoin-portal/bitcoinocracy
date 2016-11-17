@@ -1,5 +1,4 @@
 class Argument < ActiveRecord::Base
-
   extend FriendlyId
   friendly_id :statement, use: :slugged
 
@@ -13,6 +12,21 @@ class Argument < ActiveRecord::Base
 
   has_many :pros, -> { uniq }, through: :pro_signatures, class_name: 'BitcoinAddress', source: :bitcoin_address
   has_many :cons, -> { uniq }, through: :con_signatures, class_name: 'BitcoinAddress', source: :bitcoin_address
+
+  include AASM
+
+  aasm do
+    state :visible, :initial => true
+    state :hidden
+
+    event :hide do
+      transitions :from => :visible, :to => :hidden
+    end
+
+    event :unhide do
+      transitions :from => :hidden, :to => :visible
+    end
+  end
 
   def pro_statement
     "I believe that #{statement}"
