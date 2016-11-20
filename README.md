@@ -58,3 +58,11 @@ docker run \
 	--name="bitcoinocracy" \
 	arsenische/bitcoinocracy
 ~~~~
+
+You might also need to run the database migrations in your docker container in order to update the database schema:
+
+`rake db:migrate`
+
+or (if you run it for the first time):
+
+`admin_email='your@email.address' admin_password='your-admin-password'; rake db:migrate`
