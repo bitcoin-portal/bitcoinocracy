@@ -9,6 +9,7 @@ group :development do
   gem 'sqlite3'
   gem 'pry-rails'
   gem 'pry-nav'
+  gem "i18n-tasks"
 end
 gem 'pg'
 # Use SCSS for stylesheets
@@ -59,3 +60,5 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem "administrate", "~> 0.3.0"
 gem "aasm"
+gem "audited"
+gem "devise"

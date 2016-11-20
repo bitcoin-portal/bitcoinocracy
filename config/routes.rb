@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :admin do
     resources :arguments, only: [:index, :show] do
       member do
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
     end
     resources :bitcoin_addresses, only: [:index, :show]
     resources :signatures, only: [:index, :show]
-
+    resources :users
     root to: "arguments#index"
   end
 

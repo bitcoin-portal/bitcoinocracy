@@ -24,6 +24,7 @@ class ArgumentDashboard < Administrate::BaseDashboard
     cons_sum: Field::Number,
     all_sum: Field::Number,
     min_sum: Field::Number,
+    last_audits: Field::Text
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -57,7 +58,8 @@ class ArgumentDashboard < Administrate::BaseDashboard
     :cons_sum,
     :all_sum,
     :min_sum,
-    :signatures
+    :signatures,
+    :last_audits
   ].freeze
 
   # FORM_ATTRIBUTES
