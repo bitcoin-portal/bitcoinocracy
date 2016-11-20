@@ -7,8 +7,6 @@ It is absolutely transparent, free and doesn't require user registration.
 
 Just sign the statements with non-empty bitcoin addresses to express your opinion.
 
-[![tip for next commit](https://tip4commit.com/projects/43130.svg)](https://tip4commit.com/github/arsenische/bitcoinocracy)
-
 
 Data structure
 --------------
@@ -33,13 +31,6 @@ Algorithm
 ---------
 
 For each argument calculate validity: `validity = sum(pro bitcoin balances) - sum(con bitcoin balances)`
-
-Todo
-----
-* https://github.com/arsenische/bitcoinocracy/issues
-* Search, compare arguments (A vs B), etc...
-* Chat or comments on the argument's page?
-* Optional user accounts? Compound arguments? Logical inference?
 
 Docker instructions
 -------
