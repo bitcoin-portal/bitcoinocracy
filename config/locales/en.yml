@@ -24,7 +24,7 @@ en:
   arguments:
     index:
       new: "Submit your Argument"
-      title: "Bitcoinocracy - vote with your Bitcoin signature"
+      title: "Vote.bitcoin.com - vote with your Bitcoin signature"
   addresses:
     index: 'Bitcoin Addresses'
   faq: "FAQ"
