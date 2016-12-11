@@ -8,7 +8,7 @@ html
     = render 'layouts/google_analytics'
     = csrf_meta_tags
   body
-    = nav_bar static: :top, brand: image_tag('bitcoin.com.png', alt: ''), responsive: true
+    = nav_bar static: :top, brand: image_tag('bitcoin.com.png', alt: ''), brand_link: 'https://bitcoin.com', responsive: true
       = menu_group
         = menu_item "Home", root_path
         = menu_item t("arguments.index.new"), new_argument_path
