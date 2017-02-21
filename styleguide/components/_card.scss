@@ -52,6 +52,7 @@ Styleguide 2.5
     border-radius: 0 0 0 3px;
     padding: 8px 12px;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       background-color: #fafafa;
@@ -85,6 +86,7 @@ Styleguide 2.5
         height: 30px;
         line-height: 70px;
         font-family: 'Arial';
+        user-select: none;
       }
 
       &:before {

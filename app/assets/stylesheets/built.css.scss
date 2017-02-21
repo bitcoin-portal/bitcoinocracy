@@ -1195,7 +1195,11 @@ Styleguide 2.5
     border-bottom: 1px solid #ddd;
     border-radius: 0 0 0 3px;
     padding: 8px 12px;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
     .card .button-copy:hover {
       background-color: #fafafa; }
     .card .button-copy img {
@@ -1219,7 +1223,11 @@ Styleguide 2.5
         font-size: 80px;
         height: 30px;
         line-height: 70px;
-        font-family: 'Arial'; }
+        font-family: 'Arial';
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
       .card.feature > h1:before, .card.feature > h2:before, .card.feature > h3:before, .card.feature > h4:before, .card.feature > h5:before, .card.feature > h6:before, .card.feature .heading:before {
         top: 10px;
         left: 10px;
