@@ -1204,27 +1204,27 @@ Styleguide 2.5
       max-width: 15px; }
   .card.feature {
     text-align: center; }
-    .card.feature > h1, .card.feature > h2, .card.feature > h3, .card.feature > h4, .card.feature > h5, .card.feature > h6 {
+    .card.feature > h1, .card.feature > h2, .card.feature > h3, .card.feature > h4, .card.feature > h5, .card.feature > h6, .card.feature .heading {
       position: relative;
       color: #3c3c3c;
       padding: 25px 60px;
       font-size: 1.2em;
       font-weight: 700; }
       @media (min-width: 768px) {
-        .card.feature > h1, .card.feature > h2, .card.feature > h3, .card.feature > h4, .card.feature > h5, .card.feature > h6 {
+        .card.feature > h1, .card.feature > h2, .card.feature > h3, .card.feature > h4, .card.feature > h5, .card.feature > h6, .card.feature .heading {
           font-size: 1.6em; } }
-      .card.feature > h1:before, .card.feature > h1:after, .card.feature > h2:before, .card.feature > h2:after, .card.feature > h3:before, .card.feature > h3:after, .card.feature > h4:before, .card.feature > h4:after, .card.feature > h5:before, .card.feature > h5:after, .card.feature > h6:before, .card.feature > h6:after {
+      .card.feature > h1:before, .card.feature > h1:after, .card.feature > h2:before, .card.feature > h2:after, .card.feature > h3:before, .card.feature > h3:after, .card.feature > h4:before, .card.feature > h4:after, .card.feature > h5:before, .card.feature > h5:after, .card.feature > h6:before, .card.feature > h6:after, .card.feature .heading:before, .card.feature .heading:after {
         position: absolute;
         color: #EEEEEE;
         font-size: 80px;
         height: 30px;
         line-height: 70px;
         font-family: 'Arial'; }
-      .card.feature > h1:before, .card.feature > h2:before, .card.feature > h3:before, .card.feature > h4:before, .card.feature > h5:before, .card.feature > h6:before {
+      .card.feature > h1:before, .card.feature > h2:before, .card.feature > h3:before, .card.feature > h4:before, .card.feature > h5:before, .card.feature > h6:before, .card.feature .heading:before {
         top: 10px;
         left: 10px;
         content: "“"; }
-      .card.feature > h1:after, .card.feature > h2:after, .card.feature > h3:after, .card.feature > h4:after, .card.feature > h5:after, .card.feature > h6:after {
+      .card.feature > h1:after, .card.feature > h2:after, .card.feature > h3:after, .card.feature > h4:after, .card.feature > h5:after, .card.feature > h6:after, .card.feature .heading:after {
         bottom: 10px;
         right: 10px;
         content: "”"; }

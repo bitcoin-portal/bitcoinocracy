@@ -43,4 +43,17 @@ $(document).ready(function() {
   clipboard.on('error', function(e) {
     alert('The argument statement has been selected. You may copy the text now.');
   });
+
+  var selectElementContents = function(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  $('#argument-statement').click(function() {
+    var el = document.getElementById("argument-statement");
+    selectElementContents(el);
+  });
 });
