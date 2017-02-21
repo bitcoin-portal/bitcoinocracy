@@ -15,13 +15,6 @@ html
   body
     .main-wrapper
       .container
-        - if flash[:error]
-          .error.bg-danger =h flash[:error]
-        - if flash[:alert]
-          .error.bg-danger =h flash[:alert]
-        - if flash[:notice]
-          .notice.bg-success =h flash[:notice]
-
         = yield
 
     = render :partial => "layouts/footer"
