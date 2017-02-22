@@ -36,12 +36,12 @@ $(document).ready(function() {
   var clipboard = new Clipboard('.button-copy');
 
   clipboard.on('success', function(e) {
-    alert('Copied successfully!');
+    displayCopySuccess();
     e.clearSelection();
   });
 
   clipboard.on('error', function(e) {
-    alert('The argument statement has been selected. You may copy the text now.');
+    displayHighlightSuccess();
   });
 
   var selectElementContents = function(el) {
@@ -56,4 +56,38 @@ $(document).ready(function() {
     var el = document.getElementById("argument-statement");
     selectElementContents(el);
   });
+
+  var displayCopySuccess = function() {
+    $.magnificPopup.open({
+      items: {
+        src: '#copied-successfully',
+        type: 'inline'
+      },
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    }, 0);
+  };
+
+  var displayHighlightSuccess = function() {
+    $.magnificPopup.open({
+      items: {
+        src: '#highlighted-successfully',
+        type: 'inline'
+      },
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    }, 0);
+  };
 });
