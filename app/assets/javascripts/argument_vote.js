@@ -2,11 +2,13 @@ $(document).ready(function() {
   $('#vote-agree').click(function() {
     activateButton($(this));
     updateStatement('agree');
+    ga('send', 'event', 'Argument Vote Button', 'Click', 'Agree');
   });
 
   $('#vote-doubt').click(function() {
     activateButton($(this));
     updateStatement('doubt');
+    ga('send', 'event', 'Argument Vote Button', 'Click', 'Doubt');
   });
 
   var activateButton = function(button) {
@@ -36,11 +38,13 @@ $(document).ready(function() {
   var clipboard = new Clipboard('.button-copy');
 
   clipboard.on('success', function(e) {
+    ga('send', 'event', 'Argument Copy Statement', 'Click', 'Success');
     displayCopySuccess();
     e.clearSelection();
   });
 
   clipboard.on('error', function(e) {
+    ga('send', 'event', 'Argument Copy Statement', 'Click', 'Failed');
     displayHighlightSuccess();
   });
 
@@ -53,6 +57,7 @@ $(document).ready(function() {
   }
 
   $('#argument-statement').click(function() {
+    ga('send', 'event', 'Argument Statement', 'Click');
     var el = document.getElementById("argument-statement");
     selectElementContents(el);
   });
