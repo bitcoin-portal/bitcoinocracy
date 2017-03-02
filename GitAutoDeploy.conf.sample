@@ -1,0 +1,10 @@
+{
+  "port": 8001,
+  "repositories":
+  [{
+    "url": "https://github.com/bitcoin-portal/bitcoinocracy",
+    "path": "/var/lib/bitcoinocracy",
+    "deploy": "/var/lib/bitcoinocracy/deploy",
+    "branch": "refs/heads/vote-23--github-auto-deploy"
+  }]
+}
