@@ -2,13 +2,13 @@ $(document).ready(function() {
   $('#vote-agree').click(function() {
     activateButton($(this));
     updateStatement('agree');
-    ga('send', 'event', 'Argument Vote Button', 'Click', 'Agree');
+    dataLayer.push({'event': 'argument.vote.agree'});
   });
 
   $('#vote-doubt').click(function() {
     activateButton($(this));
     updateStatement('doubt');
-    ga('send', 'event', 'Argument Vote Button', 'Click', 'Doubt');
+    dataLayer.push({'event': 'argument.vote.doubt'});
   });
 
   var activateButton = function(button) {
@@ -38,13 +38,13 @@ $(document).ready(function() {
   var clipboard = new Clipboard('.button-copy');
 
   clipboard.on('success', function(e) {
-    ga('send', 'event', 'Argument Copy Statement', 'Click', 'Success');
+    dataLayer.push({'event': 'argument.copy.successful'});
     displayCopySuccess();
     e.clearSelection();
   });
 
   clipboard.on('error', function(e) {
-    ga('send', 'event', 'Argument Copy Statement', 'Click', 'Failed');
+  dataLayer.push({'event': 'argument.copy.failed'});
     displayHighlightSuccess();
   });
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
   }
 
   $('#argument-statement').click(function() {
-    ga('send', 'event', 'Argument Statement', 'Click');
+    dataLayer.push({'event': 'argument.statement.click'});
     var el = document.getElementById("argument-statement");
     selectElementContents(el);
   });
