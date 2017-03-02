@@ -1,0 +1,8 @@
+echo "Deploying..."
+git pull
+docker-compose build
+echo "Running migrations..."
+docker-compose run web rake db:migrate
+echo "Restarting Bitcoinocracy..."
+systemctl reload bitcoinocracy
+echo "Done."
