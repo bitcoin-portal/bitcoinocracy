@@ -29,11 +29,11 @@
                       =button_tag "Submit", class:"button"
                     .section
                       .alert.transparent
-                        | Warning: 
+                        | Warning:
                         a href="https://www.reddit.com/r/btc/comments/4mhjh3/psa_bitcoinocracycom_signatures_expose_your/" rel="nofollow" target="_blank" Bitcoin signatures expose your public keys
-                        |  (that shouldn't be a problem until 
+                        |  (that shouldn't be a problem until
                         a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" rel="nofollow" target="_blank" ECDSA
-                        |  is broken). Moreover address reuse with a faulty random number generator 
+                        |  is broken). Moreover address reuse with a faulty random number generator
                         a href="http://www.nilsschneider.net/2013/01/28/recovering-bitcoin-private-keys.html" rel="nofollow" target="_blank" may leak your private keys
                         |.
                       =hidden_field("signature", "negation", {value: @is_doubt, autocomplete: false})
@@ -60,7 +60,7 @@
             - if @argument.pros_sum > 0 && @argument.cons_sum > 0 && @argument.pros_sum == @argument.cons_sum
               h3 This proposition is currently tied.
               p Vote now by signing with your bitcoin signature above.
-            
+
             .button-group.center
               a.button href="https://forum.bitcoin.com/bitcoin-discussion/" Discuss this proposition
           .section
@@ -76,71 +76,25 @@
           / .argument-score
           /   .bar.positive style="flex-basis: #{percent_human(@argument.pros_share)};"= percent_human(@argument.pros_share)
           /   .bar.negative style="flex-basis: #{percent_human(@argument.cons_share)};"= percent_human(@argument.cons_share)
-    
+
     - if @argument.pros_sum > 0 && @argument.cons_sum > 0
       .section
         .card-group.horizontal
-          .card.text-center
-            h3 #{btc_human(@argument.pros_sum)} #{percent_human(@argument.pros_share)} Believe
-            .content
-              .section
-                .table-container
-                  - [@argument.pros].each_with_index do |addresses, i|
-                    table class="table borderless #{i==0 ? 'bg-success' : 'bg-danger'}"
-                      - addresses.each do |address|
-                        tr
-                          td
-                            p.bitcoin-address= link_to address.bitcoin_address, address_path(address.bitcoin_address)
-                          td
-                            p= btc_human address.balance
-          .card.text-center
-            h3 #{btc_human(@argument.cons_sum)} #{percent_human(@argument.cons_share)} Doubt
-            .content
-              .section
-                .table-container
-                  - [@argument.cons].each_with_index do |addresses, i|
-                    table class="table borderless #{i==0 ? 'bg-success' : 'bg-danger'}"
-                      - addresses.each do |address|
-                        tr
-                          td
-                            p.bitcoin-address= link_to address.bitcoin_address, address_path(address.bitcoin_address)
-                          td
-                            p= btc_human address.balance
+          = render partial: 'signatures', locals: { \
+              signatures: @argument.pro_signatures, \
+              bitcoin_value: @argument.pros_sum,    \
+              percentage: @argument.pros_share,     \
+              word: "Believe" }
+
+          = render partial: 'signatures', locals: { \
+              signatures: @argument.con_signatures, \
+              bitcoin_value: @argument.cons_sum,    \
+              percentage: @argument.cons_share,     \
+              word: "Doubt" }
 
         div#signature_status style='display:none'
-    
-      .section
-        .card-group.horizontal
-          .card.text-center
-            h3 Signatures (Believe)
-            .content
-              .section
-                .table-container
-                  - [@argument.pro_signatures.order('signature')].each_with_index do |signatures|
-                    table class="table borderless"
-                      - signatures.each do |signature|
-                        tr
-                          td
-                            p.bitcoin-address= link_to signature.bitcoin_address.try(:bitcoin_address), address_path(signature.bitcoin_address.try(:bitcoin_address))
-                          td.actions-on-hover
-                            p.bitcoin-address=  signature.signature
-                            span.actions
-                              span.icon.icon-info-circled.tooltipster title="#{signature.signature}" data-tooltipster='{"interactive":true}'
-          .card.text-center
-            h3 Signatures (Doubt)
-            .content
-              .section
-                .table-container
-                  - [@argument.con_signatures.order('signature')].each_with_index do |signatures|
-                    table class="table borderless"
-                      - signatures.each do |signature|
-                        tr
-                          td
-                            p.bitcoin-address= link_to signature.bitcoin_address.try(:bitcoin_address), address_path(signature.bitcoin_address.try(:bitcoin_address))
-                          td.actions-on-hover
-                            p.bitcoin-address=  signature.signature
-                            span.actions
-                              span.icon.icon-info-circled.tooltipster title="#{signature.signature}" data-tooltipster='{"interactive":true}'
+
+        small =link_to "All signatures as JSON", argument_path(@argument, :json)
 
     input type='hidden' name='pro_statement' id='pro_statement' value=@argument.pro_statement
     input type='hidden' name='con_statement' id='con_statement' value=@argument.con_statement

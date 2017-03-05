@@ -26,4 +26,8 @@ class BitcoinAddress < ActiveRecord::Base
     end
   end
 
+  def to_s
+    bitcoin_address
+  end
+
 end

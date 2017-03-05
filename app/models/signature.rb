@@ -33,7 +33,11 @@ class Signature < ActiveRecord::Base
           self.bitcoin_address_id = btc_addr.id
         end
       end
-    end    
+    end
+  end
+
+  def to_s
+    signature
   end
 
 end
