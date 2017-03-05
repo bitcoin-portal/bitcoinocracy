@@ -5,3 +5,24 @@
 .tooltip_templates {
   display: none;
 }
+
+.actions-on-hover {
+  .bitcoin-address {
+    vertical-align: middle;
+  }
+  
+  .actions {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.2s $easing;
+    color: #AAA;
+  }
+
+  &:hover {
+    .actions {
+      opacity: 1;
+    }
+  }
+}
