@@ -108,6 +108,39 @@
                             p= btc_human address.balance
 
         div#signature_status style='display:none'
+    
+      .section
+        .card-group.horizontal
+          .card.text-center
+            h3 Signatures (Believe)
+            .content
+              .section
+                .table-container
+                  - [@argument.pro_signatures.order('signature')].each_with_index do |signatures|
+                    table class="table borderless"
+                      - signatures.each do |signature|
+                        tr
+                          td
+                            p.bitcoin-address= link_to signature.bitcoin_address.try(:bitcoin_address), address_path(signature.bitcoin_address.try(:bitcoin_address))
+                          td.actions-on-hover
+                            p.bitcoin-address=  signature.signature
+                            span.actions
+                              span.icon.icon-info-circled.tooltipster title="#{signature.signature}" data-tooltipster='{"interactive":true}'
+          .card.text-center
+            h3 Signatures (Doubt)
+            .content
+              .section
+                .table-container
+                  - [@argument.con_signatures.order('signature')].each_with_index do |signatures|
+                    table class="table borderless"
+                      - signatures.each do |signature|
+                        tr
+                          td
+                            p.bitcoin-address= link_to signature.bitcoin_address.try(:bitcoin_address), address_path(signature.bitcoin_address.try(:bitcoin_address))
+                          td.actions-on-hover
+                            p.bitcoin-address=  signature.signature
+                            span.actions
+                              span.icon.icon-info-circled.tooltipster title="#{signature.signature}" data-tooltipster='{"interactive":true}'
 
     input type='hidden' name='pro_statement' id='pro_statement' value=@argument.pro_statement
     input type='hidden' name='con_statement' id='con_statement' value=@argument.con_statement

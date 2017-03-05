@@ -1659,7 +1659,7 @@ Styleguide 2.5
 */
 .card {
   position: relative;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 7px #ccc;
   /* Types */ }
   .card.text-center {
     text-align: center; }
@@ -2517,6 +2517,10 @@ table {
       font-size: 0.8em; }
       table tbody td p + p {
         margin-top: 10px; }
+    table tbody td a {
+      text-decoration: none; }
+      table tbody td a:hover {
+        text-decoration: underline; }
   table.borderless tbody td {
     border: none; }
 
@@ -2533,6 +2537,7 @@ markup:
 Styleguide 2.14
 */
 .bitcoin-address {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4638,6 +4643,22 @@ Styleguide 3.4
 
 .tooltip_templates {
   display: none; }
+
+.actions-on-hover .bitcoin-address {
+  vertical-align: middle; }
+
+.actions-on-hover .actions {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  color: #AAA; }
+
+.actions-on-hover:hover .actions {
+  opacity: 1; }
 
 /*
 Basic Components

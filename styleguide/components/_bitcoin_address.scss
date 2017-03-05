@@ -8,6 +8,7 @@ Styleguide 2.14
 */
 
 .bitcoin-address {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

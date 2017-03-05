@@ -6,6 +6,20 @@ $(document).ready(function() {
   });
 
   $('.tooltipster').tooltipster({
-    trigger: 'click'
+    trigger: 'click',
+    functionInit: function(instance, helper){
+
+        var $origin = $(helper.origin),
+            dataOptions = $origin.attr('data-tooltipster');
+
+        if(dataOptions){
+
+            dataOptions = JSON.parse(dataOptions);
+
+            $.each(dataOptions, function(name, option){
+                instance.option(name, option);
+            });
+        }
+    }
   });
 });
