@@ -32,7 +32,7 @@
             .amount title="#{btc_human(argument.validity)}"
               = btc_human(argument.validity)
             span.actions.flush-right
-              span.icon.icon-info-circled.tooltipster title="<div class='tooltip-content'><h3>Validity</h3><p>This refers to the difference in amount between pros & cons votes.</p></div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'
+              span.icon.icon-info-circled.tooltipster title="<div class='tooltip-content'><h3>Validity</h3><p>The validity of a proposition is equal to the difference of totals between Agree and Doubt votes.</p></div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'
 
           .vote-panel
             a.vote-up href="#{argument_path(argument)}"
