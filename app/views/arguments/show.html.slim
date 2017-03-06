@@ -60,9 +60,28 @@
             - if @argument.pros_sum > 0 && @argument.cons_sum > 0 && @argument.pros_sum == @argument.cons_sum
               h3 This proposition is currently tied.
               p Vote now by signing with your bitcoin signature above.
-            
-            .button-group.center
-              a.button href="https://forum.bitcoin.com/bitcoin-discussion/" Discuss this proposition
+
+            - if @argument.statement == 'Bitcoin Unlimited\'s path to solve Bitcoin\'s scaling issues is better than Bitcoin Core\'s'
+              .button-group.center
+                a.button target="_blank" href="https://forum.bitcoin.com/bitcoin-discussion/i-believe-that-bitcoin-unlimited-s-path-to-solve-bitcoin-s-scaling-issues-is-better-than-bitcoin-core-s-t18378.html" Join the discussion on the forum
+
+            #disqus_thread
+              javascript:
+                var disqus_config = function () {
+                this.page.url = '#{request.base_url + argument_path(@argument)}';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '#{@argument.id}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://bitcoinocracy.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+              noscript
+                | Please enable JavaScript to view the
+                a href="https://disqus.com/?ref_noscript"  comments powered by Disqus.
+
           .section
             / AddThis Button BEGIN
             .addthis_toolbox.addthis_default_style.addthis_32x32_style.pull-right addthis:data_track_clickback="false" addthis:data_track_addressbar="false" addthis:ui_language="#{I18n.locale}"
@@ -76,27 +95,6 @@
           / .argument-score
           /   .bar.positive style="flex-basis: #{percent_human(@argument.pros_share)};"= percent_human(@argument.pros_share)
           /   .bar.negative style="flex-basis: #{percent_human(@argument.cons_share)};"= percent_human(@argument.cons_share)
-    
-    .section
-      .card
-        .content
-          #disqus_thread
-          javascript:
-            var disqus_config = function () {
-            this.page.url = '#{request.base_url + argument_path(@argument)}';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = '#{@argument.id}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://bitcoinocracy.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          noscript
-            | Please enable JavaScript to view the
-            a href="https://disqus.com/?ref_noscript"  comments powered by Disqus.
-
 
     - if @argument.pros_sum > 0 && @argument.cons_sum > 0
       .section
