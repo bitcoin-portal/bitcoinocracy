@@ -9,10 +9,16 @@ html
       var BitcoinMenuWidth = 1200;
     = javascript_include_tag 'https://menu.bitcoin.com/universal-menu.js'
     = render 'layouts/google_analytics'
+    = render 'layouts/social_tags'
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     link rel="shortcut icon" href="#{image_url('favicon.png')}" type="image/x-icon"
   body
+    /! Google Tag Manager (noscript)
+    noscript
+      iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-K544XFV" style="display:none;visibility:hidden" width="0" 
+    /! End Google Tag Manager (noscript)
+
     .main-wrapper
       .container
         = yield

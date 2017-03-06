@@ -2,11 +2,13 @@ $(document).ready(function() {
   $('#vote-agree').click(function() {
     activateButton($(this));
     updateStatement('agree');
+    dataLayer.push({'event': 'argument.vote.agree'});
   });
 
   $('#vote-doubt').click(function() {
     activateButton($(this));
     updateStatement('doubt');
+    dataLayer.push({'event': 'argument.vote.doubt'});
   });
 
   var activateButton = function(button) {
@@ -36,11 +38,13 @@ $(document).ready(function() {
   var clipboard = new Clipboard('.button-copy');
 
   clipboard.on('success', function(e) {
+    dataLayer.push({'event': 'argument.copy.successful'});
     displayCopySuccess();
     e.clearSelection();
   });
 
   clipboard.on('error', function(e) {
+  dataLayer.push({'event': 'argument.copy.failed'});
     displayHighlightSuccess();
   });
 
@@ -53,6 +57,7 @@ $(document).ready(function() {
   }
 
   $('#argument-statement').click(function() {
+    dataLayer.push({'event': 'argument.statement.click'});
     var el = document.getElementById("argument-statement");
     selectElementContents(el);
   });
