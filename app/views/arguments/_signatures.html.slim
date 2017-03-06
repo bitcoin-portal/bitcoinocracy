@@ -9,7 +9,6 @@
               td
                 p.bitcoin-address= link_to s.bitcoin_address, address_path(s.bitcoin_address)
               td
-                p= btc_human(s.bitcoin_address.balance)
-              td
+                p.inline= btc_human(s.bitcoin_address.balance)
                 span.actions
                   span.icon.icon-info-circled.tooltipster title="Signature: #{s}" data-tooltipster='{"interactive":true}'

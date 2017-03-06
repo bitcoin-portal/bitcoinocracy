@@ -2541,7 +2541,7 @@ Styleguide 2.14
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 120px; }
+  max-width: 140px; }
 
 /* Clean-up required */
 .mc_error_msg {
@@ -4640,6 +4640,12 @@ Styleguide 3.4
 
 .text-left {
   text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.inline {
+  display: inline-block; }
 
 .tooltip_templates {
   display: none; }
