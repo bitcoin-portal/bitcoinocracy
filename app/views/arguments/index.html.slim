@@ -25,9 +25,15 @@
           .heading= argument.statement
           .details= argument.created_time_ago
         .summary
-          .summary-panel
+          .argument-score.small
+            .bar.positive style="flex-basis: #{argument.pros_share/(argument.pros_share+argument.cons_share)*100}%;"
+            .bar.negative style="flex-basis: #{argument.cons_share/(argument.pros_share+argument.cons_share)*100}%;"
+          .summary-panel.actions-on-hover
             .amount title="#{btc_human(argument.validity)}"
               = btc_human(argument.validity)
+            span.actions.flush-right
+              span.icon.icon-info-circled.tooltipster title="<div class='tooltip-content'><h3>Validity</h3><p>The validity of a proposition is equal to the difference of totals between Agree and Doubt votes.</p></div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'
+
           .vote-panel
             a.vote-up href="#{argument_path(argument)}"
               span.arrow.up

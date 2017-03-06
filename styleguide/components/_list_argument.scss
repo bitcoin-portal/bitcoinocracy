@@ -91,7 +91,7 @@ Styleguide 2.1
   border-left: 12px solid #f9b016;
   background-color: #FFFFFF;
   color: $dark;
-  transition: all 0.3s $easing;
+  transition: all 0.2s $easing;
 
   @media (min-width: $desktop) {
     flex-wrap: nowrap;
@@ -124,7 +124,7 @@ Styleguide 2.1
     background-color: rgba(0,0,0,0.05);
 
     @media (min-width: $desktop) {
-      max-width: 200px;
+      max-width: 240px;
     }
 
     .summary-panel {
@@ -187,7 +187,7 @@ Styleguide 2.1
       max-width: 100%;
 
       @media (min-width: $mobile) {
-        font-size: 1.5em;
+        font-size: 1em;
       }
     }
   }

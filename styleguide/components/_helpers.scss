@@ -2,6 +2,50 @@
   text-align: left;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
 .tooltip_templates {
   display: none;
+}
+
+.breakable {
+  word-break: break-all;
+}
+
+.actions-on-hover {
+  position: relative;
+
+  .bitcoin-address {
+    vertical-align: middle;
+  }
+
+  .actions {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.2s $easing;
+    color: #AAA;
+  }
+
+  &:hover {
+    .actions {
+      opacity: 1;
+    }
+  }
+}
+
+.actions {
+  &.flush-right {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(0,-50%);
+  }
 }

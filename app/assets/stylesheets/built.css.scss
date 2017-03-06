@@ -1095,9 +1095,9 @@ Styleguide 2.1
   border-left: 12px solid #f9b016;
   background-color: #FFFFFF;
   color: #3c3c3c;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-  -moz-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  -webkit-transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
   /* Themes */ }
   @media (min-width: 1024px) {
     .listitem-argument {
@@ -1133,7 +1133,7 @@ Styleguide 2.1
     background-color: rgba(0, 0, 0, 0.05); }
     @media (min-width: 1024px) {
       .listitem-argument .summary {
-        max-width: 200px; } }
+        max-width: 240px; } }
     .listitem-argument .summary .summary-panel {
       padding: 10px 20px;
       -webkit-box-flex: 1;
@@ -1238,7 +1238,7 @@ Styleguide 2.1
       max-width: 100%; }
       @media (min-width: 480px) {
         .listitem-argument .summary .amount {
-          font-size: 1.5em; } }
+          font-size: 1em; } }
   .listitem-argument .title {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
@@ -1659,7 +1659,7 @@ Styleguide 2.5
 */
 .card {
   position: relative;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 7px #ccc;
   /* Types */ }
   .card.text-center {
     text-align: center; }
@@ -2161,6 +2161,8 @@ Styleguide 2.7
       flex: 1 1 auto;
       background-color: #ef5d34;
       color: #FFFFFF; }
+  .argument-score.small .bar {
+    padding: 2px 3px; }
 
 /*
 Tabs
@@ -2517,6 +2519,10 @@ table {
       font-size: 0.8em; }
       table tbody td p + p {
         margin-top: 10px; }
+    table tbody td a {
+      text-decoration: none; }
+      table tbody td a:hover {
+        text-decoration: underline; }
   table.borderless tbody td {
     border: none; }
 
@@ -2533,10 +2539,11 @@ markup:
 Styleguide 2.14
 */
 .bitcoin-address {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 120px; }
+  max-width: 140px; }
 
 /* Clean-up required */
 .mc_error_msg {
@@ -4636,8 +4643,42 @@ Styleguide 3.4
 .text-left {
   text-align: left; }
 
+.text-right {
+  text-align: right; }
+
+.inline {
+  display: inline-block; }
+
 .tooltip_templates {
   display: none; }
+
+.breakable {
+  word-break: break-all; }
+
+.actions-on-hover {
+  position: relative; }
+  .actions-on-hover .bitcoin-address {
+    vertical-align: middle; }
+  .actions-on-hover .actions {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+    -moz-transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+    color: #AAA; }
+  .actions-on-hover:hover .actions {
+    opacity: 1; }
+
+.actions.flush-right {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%); }
 
 /*
 Basic Components
