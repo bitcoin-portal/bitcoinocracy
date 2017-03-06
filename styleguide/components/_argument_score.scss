@@ -38,4 +38,10 @@ Styleguide 2.7
       color: #FFFFFF;
     }
   }
+
+  &.small {
+    .bar {
+      padding: 2px 3px;
+    }
+  }
 }

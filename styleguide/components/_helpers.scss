@@ -19,6 +19,8 @@
 }
 
 .actions-on-hover {
+  position: relative;
+
   .bitcoin-address {
     vertical-align: middle;
   }
@@ -36,5 +38,14 @@
     .actions {
       opacity: 1;
     }
+  }
+}
+
+.actions {
+  &.flush-right {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(0,-50%);
   }
 }
