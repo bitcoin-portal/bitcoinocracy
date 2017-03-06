@@ -21,13 +21,13 @@
 
     - @arguments.each do |argument|
       .listitem-argument class="#{argument.validity < 0 ? 'negative' : (argument.validity > 0 ? 'positive' : '')}"
-        a.title href="#{argument_path(argument)}" 
+        a.title href="#{argument_path(argument)}"
           .heading= argument.statement
           .details= argument.created_time_ago
         .summary
           .argument-score.small
-            .bar.positive style="flex-basis: #{argument.pros_share/(argument.pros_share+argument.cons_share)*100}%;"
-            .bar.negative style="flex-basis: #{argument.cons_share/(argument.pros_share+argument.cons_share)*100}%;"
+            .bar.positive style="flex-basis: #{argument.pros_share.to_f*100}%;"
+            .bar.negative style="flex-basis: #{argument.cons_share.to_f*100}%;"
           .summary-panel.actions-on-hover
             .amount title="#{btc_human(argument.validity)}"
               = btc_human(argument.validity)
@@ -41,5 +41,5 @@
               span.arrow.down
 
     = paginate @arguments, :theme => 'twitter-bootstrap-3'
-    
+
   = render :partial => "layouts/sidebar"
