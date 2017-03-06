@@ -5,6 +5,10 @@ class Signature < ActiveRecord::Base
   belongs_to :argument
   belongs_to :bitcoin_address
 
+  scope :ordered_by_value, -> {
+    joins(:bitcoin_address).order('bitcoin_addresses.balance desc')
+  }
+
   validates_with SignatureValidator
 
   # scope :pro, where is_negation?: false

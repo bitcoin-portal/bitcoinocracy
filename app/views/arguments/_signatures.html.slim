@@ -4,7 +4,7 @@
     .section
       .table-container
         table class="table borderless"
-          - signatures.each do |s|
+          - signatures.ordered_by_value.each do |s|
             tr.actions-on-hover
               td
                 p.bitcoin-address= link_to s.bitcoin_address, address_path(s.bitcoin_address)
