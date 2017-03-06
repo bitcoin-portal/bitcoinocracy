@@ -11,4 +11,4 @@
               td
                 p.inline= btc_human(s.bitcoin_address.balance)
                 span.actions
-                  span.icon.icon-info-circled.tooltipster title="Signature: #{s}" data-tooltipster='{"interactive":true}'
+                  span.icon.icon-info-circled.tooltipster title="Signature: <div class='breakable'>#{s}</div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'
