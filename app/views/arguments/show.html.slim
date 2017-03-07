@@ -110,7 +110,7 @@
           /   .bar.positive style="flex-basis: #{percent_human(@argument.pros_share)};"= percent_human(@argument.pros_share)
           /   .bar.negative style="flex-basis: #{percent_human(@argument.cons_share)};"= percent_human(@argument.cons_share)
 
-    - if @argument.pros_sum > 0 && @argument.cons_sum > 0
+    - if @argument.pros_sum > 0 || @argument.cons_sum > 0
       .section
         .card-group.horizontal
           = render partial: 'signatures', locals: { \
