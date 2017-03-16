@@ -14,7 +14,7 @@ class BackgroundWorker
   end
 
   def hide_old_arguments_without_signature
-    Argument.visible.where('created_at < ? and all_sum = 0', 3.days.ago).each do |a|
+    Argument.visible.where('created_at < ? and all_sum = 0', 3.hours.ago).each do |a|
       Rails.logger.info "Hiding argument #{a.slug}: #{a.statement}"
       a.hide!
     end
