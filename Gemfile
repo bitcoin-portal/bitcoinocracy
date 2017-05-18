@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
+
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
@@ -11,6 +12,14 @@ group :development do
   gem 'pry-nav'
   gem 'i18n-tasks'
 end
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
+
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
