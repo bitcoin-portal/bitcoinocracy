@@ -22,6 +22,7 @@ Capybara.register_driver :poltergeist do |app|
     app,
     timeout: 60,
     phantomjs: ENV['PHANTOMJS_PATH'],
+    js_errors: false
   )
 end
 
