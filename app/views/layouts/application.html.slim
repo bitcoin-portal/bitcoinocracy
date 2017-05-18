@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    = render 'layouts/google_analytics'
     / title Bitcoinocracy
     = display_meta_tags site: 'Bitcoinocracy', separator: "&mdash;".html_safe
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
@@ -8,7 +9,6 @@ html
     javascript:
       var BitcoinMenuWidth = 1200;
     = javascript_include_tag 'https://menu.bitcoin.com/universal-menu.js'
-    = render 'layouts/google_analytics'
     = render 'layouts/social_tags'
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -16,7 +16,7 @@ html
   body
     /! Google Tag Manager (noscript)
     noscript
-      iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-K544XFV" style="display:none;visibility:hidden" width="0" 
+      iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5N6TL56" style="display:none;visibility:hidden" width="0"
     /! End Google Tag Manager (noscript)
 
     .main-wrapper
@@ -29,7 +29,7 @@ html
     /     a.pull-right href="https://github.com/bitcoin-portal/bitcoinocracy/issues/new" target="_blank" Report a bug
     /     p
     /       a href="http://vote.bitcoin.com" Bitcoinocracy
-    /       |. Source code is available at 
+    /       |. Source code is available at
     /       a href="https://github.com/bitcoin-portal/bitcoinocracy/" target="_blank" GitHub.
 
     javascript:
