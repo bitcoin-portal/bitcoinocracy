@@ -1,6 +1,8 @@
 README
 ======
 
+[![Build Status](https://travis-ci.org/bitcoin-portal/bitcoinocracy.svg?branch=master)](https://travis-ci.org/bitcoin-portal/bitcoinocracy)
+
 [Bitcoinocracy](http://bitcoinocracy.com) is a project that aims to determine the truth backed by real monetary value and to facilitate decentralized decision making in the Bitcoin eco-system.
 
 It is absolutely transparent, free and doesn't require user registration.
