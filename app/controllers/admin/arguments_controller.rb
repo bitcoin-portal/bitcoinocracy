@@ -14,13 +14,17 @@ module Admin
     end
 
     def hide
-      argument.hide!
+      argument.hide! if argument.visible?
       redirect_to :back
+    rescue ActionController::RedirectBackError
+      redirect_to admin_argument_url(argument)
     end
 
     def unhide
-      argument.unhide!
+      argument.unhide! if argument.hidden?
       redirect_to :back
+    rescue ActionController::RedirectBackError
+      redirect_to admin_argument_url(argument)
     end
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information

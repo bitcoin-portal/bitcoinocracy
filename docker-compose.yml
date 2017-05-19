@@ -1,18 +1,24 @@
 version: '2'
 services:
-  backround_worker:
+  background_worker:
     build: .
     command: bundle exec rake background_worker:run
     environment:
+      - HOST=${HOST}
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - DATABASE_URL=${DATABASE_URL}
       - RACK_ENV=${RACK_ENV}
       - RAILS_ENV=${RAILS_ENV}
       - SENTRY_DSN=${SENTRY_DSN}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - SLACK_CHANNEL=${SLACK_CHANNEL}
+      - SLACK_NAME=${SLACK_NAME}
+
   web:
     build: .
     command: bundle exec puma -C config/puma.rb
     environment:
+      - HOST=${HOST}
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - DATABASE_URL=${DATABASE_URL}
       - RACK_ENV=${RACK_ENV}
