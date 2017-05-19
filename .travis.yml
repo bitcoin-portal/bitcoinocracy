@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.3.1
+env:
+  - RAILS_ENV=test
+
+before_script:
+  - "cp config/database.yml.travis config/database.yml"
+
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
