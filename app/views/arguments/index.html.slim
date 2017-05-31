@@ -23,7 +23,7 @@
       .listitem-argument class="#{argument.validity < 0 ? 'negative' : (argument.validity > 0 ? 'positive' : '')}"
         a.title href="#{argument_path(argument)}"
           .heading= argument.statement
-          .details= argument.created_time_ago
+          .details= argument_details(argument)
         .summary
           .argument-score.small
             .bar.positive style="flex-basis: #{argument.pros_share.to_f*100}%;"

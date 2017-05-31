@@ -14,4 +14,9 @@ module ApplicationHelper
       ""
     end
   end
+
+  def argument_details(argument)
+    "Updated #{time_ago_in_words(argument.updated_at)} ago"
+  end
+
 end
