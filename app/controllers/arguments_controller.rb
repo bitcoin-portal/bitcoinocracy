@@ -44,7 +44,7 @@ class ArgumentsController < ApplicationController
   end
 
   def hidden
-    @arguments = Argument.hidden.order("all_sum desc").page params[:page]
+    @arguments = Argument.hidden.order("all_sum desc, updated_at desc").page params[:page]
     render :index
   end
 
