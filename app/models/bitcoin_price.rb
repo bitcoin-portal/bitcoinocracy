@@ -1,6 +1,6 @@
 class BitcoinPrice < ActiveRecord::Base
   def self.get
-    Rails.cache.fetch("#{cache_key}/bitcoin_price", expires_in: 10.seconds) do
+    Rails.cache.fetch("#{cache_key}/bitcoin_price", expires_in: 10.minutes) do
       self.fetch
     end
   end

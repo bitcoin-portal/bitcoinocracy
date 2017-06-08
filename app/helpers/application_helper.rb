@@ -4,7 +4,7 @@ module ApplicationHelper
 	end
 
   def usd_human(dollars)
-    "$#{dollars}"
+    number_to_currency(dollars)
   end
 
   def btc2usd(satoshis)
