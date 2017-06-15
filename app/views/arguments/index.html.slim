@@ -30,7 +30,7 @@
             .bar.negative style="flex-basis: #{argument.cons_share.to_f*100}%;"
           .summary-panel.actions-on-hover
             .amount title="#{btc_human(argument.validity)}"
-              = btc_human(argument.validity)
+              = usd_human(btc2usd(argument.validity))
             span.actions.flush-right
               span.icon.icon-info-circled.tooltipster title="<div class='tooltip-content'><h3>Validity</h3><p>The validity of a proposition is equal to the difference of totals between Agree and Doubt votes.</p></div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'
 
