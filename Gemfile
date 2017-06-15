@@ -74,3 +74,4 @@ gem 'devise'
 gem 'sentry-raven'
 gem 'slack-notifier'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'auto_strip_attributes'

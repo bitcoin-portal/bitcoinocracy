@@ -56,6 +56,8 @@ GEM
     ast (2.3.0)
     audited (4.4.1)
       activerecord (>= 4.0, < 5.2)
+    auto_strip_attributes (2.1.0)
+      activerecord (>= 3.0)
     autoprefixer-rails (6.7.7.2)
       execjs
     bcrypt (3.1.11)
@@ -300,6 +302,7 @@ DEPENDENCIES
   aasm
   administrate (~> 0.3.0)
   audited
+  auto_strip_attributes
   bitcoin-cigs
   bootstrap-kaminari-views
   bourbon

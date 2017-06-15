@@ -2,6 +2,8 @@ class Argument < ActiveRecord::Base
   extend FriendlyId
   friendly_id :statement, use: :slugged
 
+  auto_strip_attributes :statement, :squish => true
+
   audited only: :aasm_state
 
   scope :controversial, -> { where('pros_sum > 0 and cons_sum > 0') }
