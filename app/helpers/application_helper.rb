@@ -3,8 +3,8 @@ module ApplicationHelper
     "#{options[:prefix]}%.8f#{options[:suffix]}".html_safe % (1.0*satoshis.to_i/1e8)
 	end
 
-  def usd_human(dollars)
-    number_to_currency(dollars)
+  def usd_human(dollars, hide_cents_threshold=100_000)
+    number_to_currency(dollars, precision: dollars < hide_cents_threshold ? 2 : 0)
   end
 
   def btc2usd(satoshis)

@@ -6,7 +6,13 @@ class BitcoinPrice < ActiveRecord::Base
   end
 
   def self.fetch
-    self.fetch_from_bitcoin_average || self.fetch_from_coindesk
+    self.fetch_from_bitcoin_com || self.fetch_from_bitcoin_average || self.fetch_from_coindesk
+  end
+
+  def self.fetch_from_bitcoin_com
+    logger.info "Fetching btc price from bitcoin.com..."
+    r = Net::HTTP.get(URI.parse('https://index.bitcoin.com/api/v0/price'))
+    JSON.parse(r)['price']/100.0 rescue nil
   end
 
   def self.fetch_from_bitcoin_average
