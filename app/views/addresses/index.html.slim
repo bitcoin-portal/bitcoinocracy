@@ -23,7 +23,7 @@
         tbody
           - @addresses.each do |address|
             tr
-              td #{btc_human address.balance}: 
+              td #{bch_human address.balance}: 
               td= link_to address.bitcoin_address, address_path(address.bitcoin_address)
 
     = paginate @addresses, :theme => 'twitter-bootstrap-3'
