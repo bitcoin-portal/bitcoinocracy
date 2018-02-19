@@ -6,29 +6,23 @@ class BitcoinPrice < ActiveRecord::Base
   end
 
   def self.fetch
-    self.fetch_from_bitcoin_com || self.fetch_from_bitcoin_average || self.fetch_from_coindesk
-  end
-
-  def self.fetch_from_bitcoin_com
-    logger.info "Fetching btc price from bitcoin.com..."
-    r = Net::HTTP.get(URI.parse('https://index.bitcoin.com/api/v0/price'))
-    JSON.parse(r)['price']/100.0 rescue nil
+    self.fetch_from_bitcoin_average || self.fetch_from_coindesk
   end
 
   def self.fetch_from_bitcoin_average
-    logger.info "Fetching btc price from bitcoin average..."
-    r = Net::HTTP.get(URI.parse('https://apiv2.bitcoinaverage.com/frontend/constants/exchangerates/global'))
-    1.0/Float(JSON.parse(r)['rates']['BTC']['rate']) rescue nil
+    logger.info "Fetching price from bitcoin average..."
+    r = Net::HTTP.get(URI.parse('https://apiv2.bitcoinaverage.com/indices/global/ticker/BCHUSD'))
+    Float(JSON.parse(r)['last']) rescue nil
   end
 
-  def self.fetch_from_coindesk
-    logger.info "Fetching btc price from coindesk..."
-    r = Net::HTTP.get(URI.parse('http://api.coindesk.com/v1/bpi/currentprice.json'))
-    JSON.parse(r)['bpi']['USD']['rate_float'] rescue nil
+  def self.fetch_from_coinmarketcap
+    logger.info "Fetching price from coinmarketcap..."
+    r = Net::HTTP.get(URI.parse('https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/'))
+    Float(JSON.parse(r)['price_usd']) rescue nil
   end
 
   def self.cache_key
-    'btcusd'
+    'bchusd'
   end
 
 end
