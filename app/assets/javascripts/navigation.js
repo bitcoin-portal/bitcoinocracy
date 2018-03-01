@@ -16,4 +16,8 @@ $(document).ready(function() {
         }
     }
   });
+
+  $('[data-toggle="toggleSwitch"]').hurkanSwitch({
+    'width':150
+  });
 });

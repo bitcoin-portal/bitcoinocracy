@@ -13,4 +13,18 @@ Styleguide 2.14
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 140px;
+
+  &.full {
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+h3 {
+  .bitcoin-address {
+    span {
+      font-weight: bold;
+    }
+  }
 }

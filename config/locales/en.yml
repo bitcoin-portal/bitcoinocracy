@@ -23,9 +23,9 @@ en:
   arguments:
     index:
       new: Submit your Proposition
-      title: Vote with your Bitcoin signature
+      title: Vote with your Bitcoin Cash signature
   addresses:
-    index: Bitcoin Addresses
+    index: Bitcoin Cash Addresses
   faq: FAQ
   activerecord:
     models:

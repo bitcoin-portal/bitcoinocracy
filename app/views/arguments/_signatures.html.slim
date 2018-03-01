@@ -7,7 +7,7 @@
           - signatures.ordered_by_value.each do |s|
             tr.actions-on-hover
               td
-                p.bitcoin-address= link_to s.bitcoin_address, address_path(s.bitcoin_address)
+                p.bitcoin-address data-legacy-address="#{s.bitcoin_address}" data-address-display-format="legacy" = link_to s.bitcoin_address, address_path(s.bitcoin_address)
               td
                 p.inline= bch_human(s.bitcoin_address.balance)
                 span.actions
