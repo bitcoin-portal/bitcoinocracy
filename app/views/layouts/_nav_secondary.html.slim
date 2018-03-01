@@ -6,6 +6,9 @@ nav.secondary
       = menu_item t("addresses.index"), addresses_path
       = menu_item t("faq"), faq_path
 
+      div data-toggle="toggleSwitch"
+        input#cash-address-toggle data-on-color="success" data-off-title="Legacy" data-on-title="Cash Address" type="checkbox" name="cashAddress" checked="true"
+
     / AddThis Button BEGIN
     .addthis_toolbox.addthis_default_style.addthis_32x32_style.pull-right addthis:data_track_clickback="false" addthis:data_track_addressbar="false" addthis:ui_language="#{I18n.locale}" addthis:url="http://bitcoinocracy.com"
       a.addthis_button_preferred_1

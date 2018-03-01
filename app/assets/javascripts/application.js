@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require hurkanSwitch
 //= require twitter/bootstrap
 // require turbolinks
 //= require tooltipster.bundle.min
 //= require clipboard.min
+//= require bchaddrjs-0.2.1.min
+//= require cashaddress
 //= require_tree .
