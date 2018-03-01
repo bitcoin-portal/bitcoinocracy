@@ -30,10 +30,11 @@ class SignaturesController < ApplicationController
     end
   end
 
-  private
+private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def signature_params
-      params[:signature]
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def signature_params
+    params[:signature]
+  end
+
 end
