@@ -7,9 +7,11 @@
   .main-section
     = render :partial => "layouts/ad_728x90"
     .card.feature
-      h3.breakable #{@address.bitcoin_address}
+      h3.breakable
+        span.bitcoin-address.full data-legacy-address="#{@address.bitcoin_address}" data-address-display-format="legacy"
+          span #{@address.bitcoin_address}
       .content
-        p Balance: #{btc_human @address.balance}
+        p Balance: #{bch_human @address.balance}
         p Statements signed:
 
         ul.text-left

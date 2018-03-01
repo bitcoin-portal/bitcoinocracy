@@ -12,7 +12,7 @@ class SignaturesController < ApplicationController
           @argument.update_validity
           # redirect_to [@argument], notice: "Your vote of #{@signature.bitcoin_address.balance} is accepted"
           # format.html { redirect_to [@argument, @signature], notice: 'Signature was successfully created.' }
-          flash[:notice] = "Your vote of #{@signature.bitcoin_address.balance/1e8} btc is accepted!"
+          flash[:notice] = "Your vote of #{@signature.bitcoin_address.balance/1e8} bch is accepted!"
           flash.keep(:notice)
           url = argument_url(@argument.id) + (@signature.negation ? "?doubt=1" : "")
           format.js   { render :create, :locals => {redirection_url: url, exception: nil} }
@@ -30,10 +30,11 @@ class SignaturesController < ApplicationController
     end
   end
 
-  private
+private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def signature_params
-      params[:signature]
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def signature_params
+    params[:signature]
+  end
+
 end

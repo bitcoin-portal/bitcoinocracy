@@ -1,5 +1,5 @@
 .card.text-center
-  h3 #{btc_human(bitcoin_value)} #{percent_human(percentage)} #{word}
+  h3 #{bch_human(bitcoin_value)} #{percent_human(percentage)} #{word}
   .content
     .section
       .table-container
@@ -7,8 +7,8 @@
           - signatures.ordered_by_value.each do |s|
             tr.actions-on-hover
               td
-                p.bitcoin-address= link_to s.bitcoin_address, address_path(s.bitcoin_address)
+                p.bitcoin-address data-legacy-address="#{s.bitcoin_address}" data-address-display-format="legacy" = link_to s.bitcoin_address, address_path(s.bitcoin_address)
               td
-                p.inline= btc_human(s.bitcoin_address.balance)
+                p.inline= bch_human(s.bitcoin_address.balance)
                 span.actions
                   span.icon.icon-info-circled.tooltipster title="Signature: <div class='breakable'>#{s}</div>" data-tooltipster='{"interactive":true, "maxWidth": 250, "contentAsHTML": true}'

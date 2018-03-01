@@ -1,4 +1,3 @@
-require 'net/http'
 class Signature < ActiveRecord::Base
   self.primary_key = 'signature'
 
@@ -31,7 +30,7 @@ class Signature < ActiveRecord::Base
       if btc_addr = BitcoinAddress.find_by_bitcoin_address(signature_address)
         self.bitcoin_address_id = btc_addr.id
       else
-        res = Net::HTTP.get(URI.parse("https://blockchain.info/q/addressbalance/#{signature_address}"))
+        res = BitcoinAddress.fetch_balance(signature_address)
         if (balance=res.to_i) > 0
           btc_addr = BitcoinAddress.create({bitcoin_address: signature_address, balance: balance })
           self.bitcoin_address_id = btc_addr.id

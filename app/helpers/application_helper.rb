@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def btc_human(satoshis, options = {prefix: '', suffix: '&nbsp;BTC'} )
+	def bch_human(satoshis, options = {prefix: '', suffix: '&nbsp;BCH'} )
     "#{options[:prefix]}%.8f#{options[:suffix]}".html_safe % (1.0*satoshis.to_i/1e8)
 	end
 
@@ -7,11 +7,11 @@ module ApplicationHelper
     number_to_currency(dollars, precision: dollars.abs < hide_cents_threshold ? 2 : 0)
   end
 
-  def btc2usd(satoshis)
+  def bch2usd(satoshis)
     satoshis * BitcoinPrice.get / 1e8
   end
 
-	def btc_human_spaced(satoshies, options = {prefix: '', suffix: ' BTC'} )
+	def bch_human_spaced(satoshies, options = {prefix: '', suffix: ' BCH'} )
 		number_to_currency(1.0*satoshies.to_i/1e8, unit: options[:suffix], precision: 8, delimiter: " ", format: "%n %u").html_safe
 	end
 
