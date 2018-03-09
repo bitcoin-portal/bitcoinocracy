@@ -4888,6 +4888,10 @@ Styleguide 3.4
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%); }
 
+/* Top bar CryptoBar placement below menu bar */
+body ._bsa_show ._bsa_fancybar {
+  top: 52px; }
+
 /*
 Basic Components
 
