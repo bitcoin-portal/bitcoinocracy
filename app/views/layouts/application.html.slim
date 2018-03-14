@@ -41,3 +41,12 @@ html
           I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
         },false)
       })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+
+    / Crypto Bar
+    = javascript_include_tag '//m.servedby-buysellads.com/monetization.js'
+    javascript:
+      (function(){
+          if(typeof _bsa !== 'undefined' && _bsa) {
+              _bsa.init('fancybar', 'CKYDV2QM', 'placement:bitcoincom');
+          }
+      })();
